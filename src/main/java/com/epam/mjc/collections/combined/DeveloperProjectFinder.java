@@ -14,7 +14,7 @@ public class DeveloperProjectFinder {
             @Override
             public int compare(String o1, String o2) {
                 if (o2.length()-o1.length() == 0){
-                    o2.compareTo(o1);
+                    o2.compareToIgnoreCase(o1);
                 }
                 return o2.length()-o1.length();
             }
