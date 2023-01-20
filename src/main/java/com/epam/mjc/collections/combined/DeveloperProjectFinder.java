@@ -10,14 +10,11 @@ public class DeveloperProjectFinder {
                 result.add(entry.getKey());
             }
         }
-        result.sort(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                if (o2.length()-o1.length() == 0){
-                    o2.compareToIgnoreCase(o1);
-                }
-                return o2.length()-o1.length();
+        result.sort((o1, o2) -> {
+            if (o2.length()-o1.length() == 0){
+                return o2.compareToIgnoreCase(o1);
             }
+            return o2.length()-o1.length();
         });
         return result;
     }
